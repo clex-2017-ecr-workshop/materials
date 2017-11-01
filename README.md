@@ -89,6 +89,8 @@ This app has two views: your `Changes`, where you can see everything you've done
 
 ![](assets/jekyll-site-structure.png)
 
+## 5. Writing and editing posts
+
 There'll be various extras depending on your theme, but the most typical parts of a Jekyll theme are:
 
 - `_config.yml`, which is the settings file. It's plain text.
@@ -97,12 +99,76 @@ There'll be various extras depending on your theme, but the most typical parts o
 
 There're also a couple of things that git uses. (They're all files that start with a full stop; if you can't see them, it's because they're hidden.) The `.git` folder, in particular, is where git does all of its magic. **Don't touch it.**
 
-The `_posts` folder is where we get to add our posts. Most themes should come with a few sample posts already.
+The `_posts` folder is where we get to add our posts. Most themes should come with a few sample posts already, and they'll almost certainly be in Markdown (with the file extension `.md` or `.markdown`. Open one up in a basic text editor—Notepad (Windows), TextEdit (Mac) or your code editor is totally fine. (Microsoft Word isn't, though!).
+
+Markdown files are just plain text. They start with some _front matter_: a bunch of options surrounded by `---`. The post content follows:
+
+![](assets/markdown-post.png)
+
+The basic rules of Markdown are that you can `**bold text**`, `_italicise it_`,
+
+```
+* make a few
+* bullet points
+* using asterisks
+
+1. or even
+2. some numbers
+
+# and start lines with hashtags to create headings!
+```
+
+Markdown can do other stuff, though, like images, links and tables, so [have a look at this cheat sheet]((https://guides.github.com/features/mastering-markdown/)) if you need some help.
+
+Try turning a couple of the sample posts into real ones (no pressure if you don't have anything up your sleeve) or creating new ones. Save as you go, just as you would a regular file.
+
+## 6. Add, commit and push
+
+Okay, so this is where the version control comes back in. Let's flick back to the Gthub Desktop app. It's looking busier now:
+
+![](assets/github-desktop-changes.png)
+
+In the left column, we have the files that have changed (assuming we've saved those changes). On the right, we can see exactly which lines in the selected file have changed: additions in green, removed lines in red.
+
+In git, you don't have to  commit everything you've changed at once. You might want to commit some of your changed files separately—that way, when you look back at your project, you can see what was happening more clearly. In order to do this, you _add_ files that you want to commit (files that have been added are sometimes called _staged files_, and they're referred to as being in the _index_. git has like ten different names for everything).
+
+In the Desktop app, we do the adding and commiting in one step: we check the files that we want to add, write a summary that describes the changes in one line (and a longer description if we want more notes for later), and then we hit `Commit to master`:
+
+![](assets/github-desktop-commit.png)
+
+It's saved now—not just on your disk, but in version control. With some more git skills, you could return the file back to this state no matter what you later did to it.
+
+But it isn't live yet. If we want the version of our website repo to reflect these changes, we need to `Push` our commits.
+
+There's a handy button for that, up the top-right:
+
+![](assets/github-desktop-push.png)
+
+Once you've done that, you can go back to your repo page an see the changes there—or you can go to your website and see the post live! Nice job!
+
+## 7. Optional activities
+
+There're a bunch of different ways we can explore from here in the second half of the session:
+
+1. Start a new repo from scratch, using the `New repository` button in Github (look for the + button up the top-right). Make sure you elect to "Initialize this repository with a README", which will make getting started easier.
+2. Look through `_config.yml` and see whether your blog theme comes with any interesting customisation options built-in.
+3. Delete the site and start over! Back up the `_posts` folder (copy it somewhere else), delete the local repo and the version on GitHub (it's in the Settings), then fork and clone a new theme and copy the `_posts` folder back in.
+4. Try creating static pages for your blog/site. Take a look at `index.html`: in most themes, static pages are just written the same way as posts, with some minimal front matter followed by some content (more often done in HTML, but you can use Markdown too!). Try copying `index.html` with another name (`greatpage.html`) and see if you can figure out how to modify it.
+5. Hook a domain up to your site, if you have one. This is on the harder side.
+6. If you have some command line experience, try [installing Jekyll on your laptop](https://jekyllrb.com/) so that you can test your website before you push your changes.
 
 ## X. What's next?
 
+Make sure you [sign up for the Github Student Developer Pack](https://education.github.com/pack). It takes a few weeks to go through, but it comes with free private repos (in case you're not ready to share your work with people) for two years (renewable as long as you're a student), plus a bunch of credit for other computer services.
 
+This was a very small taste of git! If you liked what you saw and would like to consider using it more, you might want to consider getting a proper introduction to it. Most guides teach you how to use a command line to do this, but if you're not quite ready to try the one on your laptop, you could practise with [this mock command line built by GitHub](https://try.github.io/). Can't break anything there!
 
-Need a refresher on the theory? Read this paper: 
+Software Carpentry offers a [very thorough course on version control with git](http://swcarpentry.github.io/git-novice/), and it comes highly recommended, covering several concepts that we skipped over today. However, it assumes some familiarity with the comand line. If you're also new to that, you might want to start with their [shell tutorial](http://swcarpentry.github.io/shell-novice/). These lessons often all get packed into one day when SC do their workshops at centre nodes, so it can sometimes be overwhelming to do it all at once.
+
+If you're fine with git but want to explore Jekyll and Github Pages further, start by [installing Jekyll and looking at the documentation](https://jekyllrb.com). Jekyll sites are _pre-generated_—that is, you run the program to process your posts and other files into static HTML (Github Pages cheats and does that for you), so you can always set your site up somewhere else if you don't like or are obliged not to use GitHub Pages.
+
+Need a refresher on the theory? A lot of the theory at the start of today's session came from this excellent paper: 
 
 _Bryan, J. “Excuse Me, Do You Have a Moment to Talk about Version Control?” PeerJ Preprints, August 28, 2017. [doi: 10.7287/peerj.preprints.3159v2](https://doi.org/10.7287/peerj.preprints.3159v2)._
+
+Good luck!
