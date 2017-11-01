@@ -1,5 +1,7 @@
 # CLEX 2017 ECR Workshop: Materials
 
+Need another copy of these materials? Go to https://github.com/clex-2017-ecr-workshop.
+
 ## 1. Before you arrive
 
 Before you arrive at the workshop, you should do two things:
